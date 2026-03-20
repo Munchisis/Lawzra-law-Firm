@@ -1,0 +1,134 @@
+import { MoveLeft, ShieldCheck, Lock, FileText, Globe, Gavel, AlertCircle, Scale, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { assets } from "../../assets/assets";
+
+const Privacy = () => {
+  const expertise = [
+    {
+      title: "Data Protection Compliance",
+      desc: "Expert navigation of NDPA (Nigeria), GDPR, and CCPA frameworks.",
+      icon: <ShieldCheck size={18} className="text-green-500" />,
+    },
+    {
+      title: "Privacy Impact Assessments",
+      desc: "Identifying and mitigating risks in complex data processing cycles.",
+      icon: <CheckCircle2 size={18} className="text-green-500" />,
+    },
+    {
+      title: "Policy Development",
+      desc: "Drafting robust Privacy Policies and internal data handling manuals.",
+      icon: <FileText size={18} className="text-green-500" />,
+    },
+    {
+      title: "Consent Management",
+      desc: "Strategies for lawful data collection and processing workflows.",
+      icon: <Lock size={18} className="text-green-500" />,
+    },
+    {
+      title: "Cross-Border Transfers",
+      desc: "Legal mechanisms for international data flows and global compliance.",
+      icon: <Globe size={18} className="text-green-500" />,
+    },
+    {
+      title: "Privacy Litigation",
+      desc: "Representation in data breach disputes and regulatory enforcement actions.",
+      icon: <Gavel size={18} className="text-green-500" />,
+    },
+    {
+      title: "Corporate Governance",
+      desc: "Establishing frameworks for enterprise-wide privacy risk management.",
+      icon: <Scale size={18} className="text-green-500" />,
+    },
+    {
+      title: "Breach Response",
+      desc: "Legal counsel on mandatory notifications and liability mitigation.",
+      icon: <AlertCircle size={18} className="text-green-500" />,
+    },
+  ];
+
+  return (
+    <>
+      {/* Header Hero */}
+      <div
+        className="relative px-4 bg-no-repeat bg-cover pt-40 pb-24 overflow-hidden"
+        style={{ backgroundImage: `url(${assets.privacy || assets.aboutUs4})` }}
+      >
+        <div className="absolute inset-0 bg-black/75"></div>
+        <div className="relative z-10 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white font-serif uppercase tracking-tight">
+            Privacy
+          </h1>
+          <div className="h-1 w-20 bg-green-500 mx-auto mb-6"></div>
+          <p className="max-w-2xl mx-auto text-slate-200 text-lg md:text-xl font-light">
+            Comprehensive legal solutions for safeguarding data assets and ensuring strict adherence to global privacy obligations.
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-col items-center px-4 md:px-10 lg:px-20 -mt-10 mb-20 relative z-20">
+        <div className="w-full max-w-6xl bg-white dark:bg-slate-900 p-8 md:p-16 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl transition-colors duration-300">
+          
+          {/* Navigation */}
+          <div className="mb-10">
+            <Link
+              to="/practice-areas"
+              className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-green-600 transition-colors group px-4 py-2 bg-slate-50 dark:bg-slate-800 rounded-full border border-slate-100 dark:border-slate-700"
+            >
+              <MoveLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+              Back to Practice Areas
+            </Link>
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white text-center mb-6">
+            Privacy & Data Protection
+          </h2>
+
+          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-16 leading-relaxed text-center max-w-4xl mx-auto">
+            In a digital-first economy, data is your most valuable asset. We provide the legal infrastructure needed to protect that value while staying compliant with evolving regulations.
+          </p>
+
+          {/* Expertise Grid */}
+          <div className="mt-8">
+            <div className="flex items-center gap-4 mb-12">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white uppercase tracking-widest">
+                Our Expertise
+              </h3>
+              <div className="flex-1 h-px bg-slate-100 dark:bg-slate-800"></div>
+            </div>
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+              {expertise.map((item, i) => (
+                <li key={i} className="flex gap-4 group">
+                  <div className="mt-1 p-2 bg-green-50 dark:bg-green-900/20 rounded-lg group-hover:scale-110 transition-transform h-fit">
+                    {item.icon}
+                  </div>
+                  <div className="flex flex-col">
+                    <strong className="text-slate-900 dark:text-slate-100 font-bold text-lg leading-tight">
+                      {item.title}
+                    </strong>
+                    <span className="text-slate-600 dark:text-slate-400 text-sm mt-2 leading-relaxed">
+                      {item.desc}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Call to Action */}
+          <div className="mt-20 text-center border-t border-slate-100 dark:border-slate-800 pt-12">
+            <h4 className="text-slate-900 dark:text-white font-bold text-xl mb-6">Unsure of your compliance status?</h4>
+            <Link
+              to="/appointment"
+              className="inline-block bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-full font-bold transition-all active:scale-95 shadow-xl shadow-green-600/20 uppercase tracking-widest text-sm"
+            >
+              Request a Privacy Audit
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Privacy;

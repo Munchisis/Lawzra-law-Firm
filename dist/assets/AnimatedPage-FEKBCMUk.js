@@ -1,0 +1,1 @@
+import{j as a,m as n}from"./motion-DR_ormxg.js";const o=({children:i})=>{const t={initial:{opacity:0,y:15},animate:{opacity:1,y:0},exit:{opacity:0,y:-15}};return a.jsx(n.div,{variants:t,initial:"initial",animate:"animate",exit:"exit",transition:{duration:.5,ease:[.22,1,.36,1]},children:i})};export{o as A};
